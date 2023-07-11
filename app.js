@@ -10,6 +10,10 @@ app.use(cors());
 
 app.use("/transactions", transactionsController);
 
+app.use("/", (req, res) => {
+  res.status(200).json({ message: "Hello world" });
+});
+
 app.use("*", (req, res) => {
   res.status(404).json({ message: "Sorry, no page found!" });
 });

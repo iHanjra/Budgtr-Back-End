@@ -35,7 +35,7 @@ router.post("/create-transaction", (req, res) => {
       from,
       category,
     };
-    transactions.push(newTransaction);
+    transactions.unshift(newTransaction);
     res.status(200).json({ status: true, data: newTransaction });
   }
 });
